@@ -1,6 +1,36 @@
 'use strict';
 
+
+let hour = ['6am ', '7am ', '8am ', '9am ', '10am ', '11am ', '12pm ', '1pm ', '2pm ', '3pm ', '4pm ', '5pm ', '6pm ', '7pm '];
+
+function Salmon (name,min,max,avg) {
+  this.name = name;
+  this.min = min;
+  this.max = max;
+  this.avg = avg;
+  this.customer = [];
+  this.cookiesSales = [];
+  this.total = 0;
+  Salmon.prototype.getsales= function () {
+    for (let i = 0; i < hour.length; i++) {
+      let cookie = Math.ceil(getRandomArbitrary(this.min, this.max) * this.avg);
+      this.cookiesSales.push(cookie);
+      this.total += cookie;
+
+    }
+  };
+}
+
 function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+const seattle = new Salmon('Seattle',23,65,6.3);
+const Tokyo = new Salmon('Seattle',3,24,1.2);
+console.log(seattle);
+console.log(Tokyo);
+console.log(Tokyo.cookiesSales);
+/*function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
 }
 let hour = ['6am ', '7am ', '8am ', '9am ', '10am ', '11am ', '12pm ', '1pm ', '2pm ', '3pm ', '4pm ', '5pm ', '6pm ', '7pm '];
@@ -96,7 +126,7 @@ const Tokyo = {
                 </ul>
 
             </article> -->*/
-    const parentElement = document.getElementById('shop salmon');
+/*const parentElement = document.getElementById('shop salmon');
 
     const articalElement = document.createElement('article');
     parentElement.appendChild(articalElement);
@@ -158,7 +188,7 @@ const Dubai = {
                 </ul>
 
             </article> -->*/
-    const parentElement = document.getElementById('shop salmon');
+/*const parentElement = document.getElementById('shop salmon');
 
     const articalElement = document.createElement('article');
     parentElement.appendChild(articalElement);
@@ -218,7 +248,7 @@ const Paris= {
                 </ul>
 
             </article> -->*/
-    const parentElement = document.getElementById('shop salmon');
+/*const parentElement = document.getElementById('shop salmon');
 
     const articalElement = document.createElement('article');
     parentElement.appendChild(articalElement);
@@ -279,7 +309,7 @@ const lima= {
                 </ul>
 
             </article> -->*/
-    const parentElement = document.getElementById('shop salmon');
+/* const parentElement = document.getElementById('shop salmon');
 
     const articalElement = document.createElement('article');
     parentElement.appendChild(articalElement);
@@ -307,7 +337,7 @@ console.log(Dubai.cookiesSales);
 
 lima.getCustomer();
 lima.getsales();
-lima.render();
+lima.render();*/
 
 
 
