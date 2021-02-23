@@ -1,5 +1,5 @@
 'use strict';
-let ahmad = prompt('hu');
+
 function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
 }
