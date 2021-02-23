@@ -1,5 +1,5 @@
 'use strict';
-
+let ahmad = prompt('hu');
 function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
 }
@@ -60,9 +60,7 @@ const seattle = {
   },
 };
 console.log(seattle);
-//seattle.cookiesSales();
-// seattle.getsales();
-// seattle.getCustomer();
+
 
 seattle.render();
 
@@ -88,14 +86,7 @@ const Tokyo = {
     }
   },
   render : function () {
-    /* <article>
-                <ul>
-                    <li>
-
-                    </li>
-                </ul>
-
-            </article> -->*/
+    
     const parentElement = document.getElementById('shop salmon');
 
     const articalElement = document.createElement('article');
@@ -126,7 +117,7 @@ Tokyo.getCustomer();
 Tokyo.getsales();
 Tokyo.render();
 
-//seattle.render();
+
 
 const Dubai = {
   name:'Dubai',
@@ -150,14 +141,7 @@ const Dubai = {
     }
   },
   render : function () {
-    /* <article>
-                <ul>
-                    <li>
-
-                    </li>
-                </ul>
-
-            </article> -->*/
+   
     const parentElement = document.getElementById('shop salmon');
 
     const articalElement = document.createElement('article');
@@ -210,14 +194,7 @@ const Paris= {
     }
   },
   render : function () {
-    /* <article>
-                <ul>
-                    <li>
-
-                    </li>
-                </ul>
-
-            </article> -->*/
+    
     const parentElement = document.getElementById('shop salmon');
 
     const articalElement = document.createElement('article');
@@ -271,14 +248,7 @@ const lima= {
     }
   },
   render : function () {
-    /* <article>
-                <ul>
-                    <li>
-
-                    </li>
-                </ul>
-
-            </article> -->*/
+   
     const parentElement = document.getElementById('shop salmon');
 
     const articalElement = document.createElement('article');
