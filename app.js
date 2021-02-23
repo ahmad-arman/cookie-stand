@@ -16,7 +16,7 @@ function Salmon (name,min,max,avg) {
   this.total = 0;
   this.getCustomer();
   this.getsales();
-  this.render();
+  //this.render();
 
 
 }
@@ -70,16 +70,23 @@ Salmon.prototype.render= function () {
 
 };
 
+
+const seattle = new Salmon('Seattle',23,65,6.3);
+
+seattle.render();
+const tokoy = new Salmon('Tokoy',3,24,1.2);
+tokoy.render();
 // seattle.getsales();
 // seattle.getCustomer();
 
 
 
 
-const seattle = new Salmon('Seattle',23,65,6.3);
+
 // seattle.customer();
 // seattle.cookiesSales();
-seattle.render();
+
+
 /*const Tokyo = new Salmon('Tokyo',3,24,1.2);
 
 //const Tokyo = new Salmon('Tokyo',3,24,1.2);//
