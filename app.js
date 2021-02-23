@@ -2,6 +2,9 @@
 
 
 let hour = ['6am ', '7am ', '8am ', '9am ', '10am ', '11am ', '12pm ', '1pm ', '2pm ', '3pm ', '4pm ', '5pm ', '6pm ', '7pm '];
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
 
 function Salmon (name,min,max,avg) {
   this.name = name;
@@ -11,24 +14,78 @@ function Salmon (name,min,max,avg) {
   this.customer = [];
   this.cookiesSales = [];
   this.total = 0;
-  Salmon.prototype.getsales= function () {
-    for (let i = 0; i < hour.length; i++) {
-      let cookie = Math.ceil(getRandomArbitrary(this.min, this.max) * this.avg);
-      this.cookiesSales.push(cookie);
-      this.total += cookie;
+  this.getCustomer();
+  this.getsales();
+  this.render();
 
-    }
-  };
-}
 
-function getRandomArbitrary(min, max) {
-  return Math.random() * (max - min) + min;
 }
+Salmon.prototype.getCustomer= function () {
+  for (let i = 0; i < hour.length; i++) {
+    let cookie = Math.ceil(getRandomArbitrary(this.min, this.max) );
+    this.customer.push(cookie);
+    console.log(this.customer);
+
+  }
+};
+Salmon.prototype.getsales= function () {
+  for (let i = 0; i < hour.length; i++) {
+    let cookie = Math.ceil(getRandomArbitrary(this.min, this.max) * this.avg);
+    this.cookiesSales.push(cookie);
+    this.total += cookie;
+    console.log(5);
+
+  }
+};
+
+Salmon.prototype.render= function () {
+  /*seattle.getsales();
+  seattle.getCustomer();*/
+
+  const parentElement = document.getElementById('shop salmon');
+
+  const articalElement = document.createElement('article');
+  parentElement.appendChild(articalElement);
+
+  const h2Element = document.createElement('h2');
+  articalElement.appendChild(h2Element);
+  h2Element.textContent = this.name;
+
+  const ulElement = document.createElement('ul');
+  articalElement.appendChild(ulElement);
+
+  console.log('test');
+
+  for (let i = 0; i < hour.length; i++) {
+    const liElement = document.createElement('li');
+    ulElement.appendChild(liElement);
+
+    liElement.textContent = `${hour[i]}:${this.cookiesSales[i]} cookies .`;
+
+
+  }
+  const liElement = document.createElement('li');
+  ulElement.appendChild(liElement);
+  liElement.textContent = `Total: ${this.total} cookies`;
+
+};
+
+// seattle.getsales();
+// seattle.getCustomer();
+
+
+
 
 const seattle = new Salmon('Seattle',23,65,6.3);
-const Tokyo = new Salmon('Seattle',3,24,1.2);
-console.log(seattle);
+// seattle.customer();
+// seattle.cookiesSales();
+seattle.render();
+/*const Tokyo = new Salmon('Tokyo',3,24,1.2);
+
+//const Tokyo = new Salmon('Tokyo',3,24,1.2);//
+/*console.log(seattle);
 console.log(Tokyo);
+console.log(Tokyo.getsales);
 console.log(Tokyo.cookiesSales);
 /*function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
