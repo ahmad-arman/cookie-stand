@@ -1,60 +1,68 @@
-#shopSalmon article table th {
-    
-        background-color: black;
-        color: white;
-      
-}
+ 
 
-td {
+tr {
+    text-align: center;
+  }
+  
+  th  {
+    border: 1px solid #ddd;
+    background-color: black;
+    color: white;
     border-radius: 12px;
+  }
+  
+  
+  td {
+  border: 1px solid #ddd;
+  border-radius: 12px;
   background:mediumpurple ;
   padding: 10px;
   width: 0px;
   height: 10px;
-}
-.salmon{
-    width: 300px;
-    animation: animitionfish  5s linear infinite  ;
-
-}
-@keyframes animitionfish {
-    0%
-    {
-      transform: translate(600px,0) rotateY(180deg );
-    }
-    50%
-    {
-      transform: translate(180px,0) rotateY(180deg );
-    }
-    51%
-    {
-      transform: translate(180px ,0) rotateY(0deg );
-    }
-    100%
-    {
-      transform: translate(0,0) rotateY(0deg );
-    }
-}
- .salm{
-     width: 300px;
-    animation: animitionfish  5s linear infinite  ;
-
-}
-@keyframes animitionfish {
-    0%
-    {
-      transform: translate(0,0) rotateY(0deg ); 
-    }
-    50%
-    {
-      transform: translate(300px,0) rotateY(180deg );
-    }
-    51%
-    {
-      transform: translate(300px ,0) rotateY(0deg );
-    }
-    100%
-    {
-      transform: translate(300px,0) rotateY(0deg );
-    }
-} 
+  }
+  .salmon{
+  width: 300px;
+  animation: animitionfish  5s linear infinite  ;
+  
+  }
+  @keyframes animitionfish {
+  0%
+  {
+  transform: translate(600px,0) rotateY(180deg );
+  }
+  50%
+  {
+  transform: translate(180px,0) rotateY(180deg );
+  }
+  51%
+  {
+  transform: translate(180px ,0) rotateY(0deg );
+  }
+  100%
+  {
+  transform: translate(0,0) rotateY(0deg );
+  }
+  }
+  .salm{
+  width: 300px;
+  animation: animitionfish  5s linear infinite  ;
+  
+  }
+  @keyframes animitionfish {
+  0%
+  {
+  transform: translate(0,0) rotateY(0deg ); 
+  }
+  50%
+  {
+  transform: translate(300px,0) rotateY(180deg );
+  }
+  51%
+  {
+  transform: translate(300px ,0) rotateY(0deg );
+  }
+  100%
+  {
+  transform: translate(300px,0) rotateY(0deg );
+  }
+  } 
