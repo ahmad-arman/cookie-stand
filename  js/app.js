@@ -89,8 +89,7 @@ const Paris = new Salmon('Paris', 20, 38, 3.7);
 const lima = new Salmon('Lima', 2, 16, 4.6);
 //lima.render();
 
-const jordan = new Salmon('jordan', 2, 16, 4.6);
-const jor = new Salmon('jor', 8, 16, 4.6);
+
 
 const articalElement = document.createElement('article');
 shopSalmon.appendChild(articalElement);
@@ -124,7 +123,7 @@ const headtable = function () {
 
 };
 
- // call it in the render method
+// call it in the render method
 
 
 const bodyTable = function () {
@@ -164,9 +163,11 @@ const footerTable = function () {
   const tr2Element = document.createElement('tr');
   tableElement.appendChild(tr2Element);
 
+  tr2Element.id = 'lastFooter';
+
   const th1Element = document.createElement('th');
   tr2Element.appendChild(th1Element);
-  th1Element.textContent = 'total per hour all country';
+  th1Element.textContent = 'total ';
 
   for (let i = 0; i < hour.length; i++) {
     const th2Element = document.createElement('th');
@@ -190,7 +191,7 @@ const footerTable = function () {
   const th3Element = document.createElement('th');
   tr2Element.appendChild(th3Element);
   let totalOfTotal = 0;
-  for (let j = 0; j < countries.length ; j++) {
+  for (let j = 0; j < countries.length; j++) {
 
     totalOfTotal = totalOfTotal + countries[j].total;
     th3Element.textContent = totalOfTotal;
@@ -214,18 +215,36 @@ formElement.addEventListener('submit', function (event) {
   const maxCustomer = event.target.max_Customer.value;
   const avgCookies = event.target.avg_Cookies.value;
 
-  
+
 
 
   const country = new Salmon(countryName, minCustomer, maxCustomer, avgCookies);
- //document.getElementById('shopSalmon').removeChild(document.getElementById('shopSalmon').lastChild);
-  formElement.reset();
-  headtable();
-  bodyTable();
+  //document.getElementById('shopSalmon').removeChild(document.getElementById('shopSalmon').lastChild);
+
+  const trNewElement = document.createElement('tr');
+  tableElement.appendChild(trNewElement);
+
+  const tdNewElement = document.createElement('td');
+  trNewElement.appendChild(tdNewElement);
+  tdNewElement.textContent = country.name;
+  country.total=0;
+
+  for (let i = 0; i < hour.length; i++) {
+
+    const tdElement = document.createElement('td');
+    trNewElement.appendChild(tdElement);
+    tdElement.textContent = country.cookiesSales[i];
+    country.total += country.cookiesSales[i];
+
+  }
+  const td1Element = document.createElement('td');
+  trNewElement.appendChild(td1Element);
+  td1Element.textContent = country.total;
+
+  let deleteFooter = document.getElementById('lastFooter');
+  deleteFooter.parentNode.removeChild(deleteFooter);
   footerTable();
-
-
-
+  formElement.reset();
 
 });
 
