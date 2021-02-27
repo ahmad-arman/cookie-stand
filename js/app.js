@@ -50,7 +50,7 @@ const tokoy = new Salmon('Tokoy', 3, 24, 1.2);
 
 const dubai = new Salmon('Dubai', 11, 38, 3.7);
 
-const Paris = new Salmon('Paris', 20, 38, 3.7);
+const paris = new Salmon('Paris', 20, 38, 3.7);
 
 const lima = new Salmon('Lima', 2, 16, 4.6);
 
@@ -160,3 +160,10 @@ const footerTable = function () {
 headtable();
 bodyTable();
 footerTable();
+seattle();
+tokoy();
+dubai();
+paris();
+lima();
+
+
