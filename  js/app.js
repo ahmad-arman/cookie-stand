@@ -82,11 +82,10 @@ const headtable = function () {
 
 };
 
-// call it in the render method
 
 
 const bodyTable = function () {
-  
+
 
   for (let i = 0; i < countries.length; i++) {
 
@@ -131,16 +130,12 @@ const footerTable = function () {
 
     for (let j = 0; j < countries.length; j++) {
       console.log(countries[j].cookiesSales[i]);
-      // totalPerHour = totalPerHour + (countries[j].cookiesSales[i]);
+
       totalPerHour += countries[j].cookiesSales[i];
-      // console.log("totalPerHour", totalPerHour);
+
 
     }
     th2Element.textContent = totalPerHour;
-    // th2Element.textContent =countries[i].totalPerHour;
-    //  th2Element.textContent =countries[i].cookiesSales;
-    // countries[i].totalperhourallcontury += countries[i].cookiesSales;
-    // th2Element.textContent = countries[i].cookiesSales;
 
   }
   const th3Element = document.createElement('th');
@@ -152,56 +147,6 @@ const footerTable = function () {
     th3Element.textContent = totalOfTotal;
   }
 };
-
-
-
-//console.log(countries);
-
-
-const formElement = document.getElementById('addNewCountryForm');
-console.log(formElement);
-
-// formElement.addEventListener('submit', function (event) {
-//   event.preventDefault();
-//   console.log(event.target.countryName.value);
-
-//   const countryName = event.target.country_Name.value;
-//   const minCustomer = event.target.min_Customer.value;
-//   const maxCustomer = event.target.max_Customer.value;
-//   const avgCookies = event.target.avg_Cookies.value;
-
-
-
-
-//   const country = new Salmon(countryName, minCustomer, maxCustomer, avgCookies);
-//   //document.getElementById('shopSalmon').removeChild(document.getElementById('shopSalmon').lastChild);
-
-//   const trNewElement = document.createElement('tr');
-//   tableElement.appendChild(trNewElement);
-
-//   const tdNewElement = document.createElement('td');
-//   trNewElement.appendChild(tdNewElement);
-//   tdNewElement.textContent = country.name;
-//   country.total=0;
-
-//   for (let i = 0; i < hour.length; i++) {
-
-//     const tdElement = document.createElement('td');
-//     trNewElement.appendChild(tdElement);
-//     tdElement.textContent = country.cookiesSales[i];
-//     country.total += country.cookiesSales[i];
-
-//   }
-//   const td1Element = document.createElement('td');
-//   trNewElement.appendChild(td1Element);
-//   td1Element.textContent = country.total;
-
-//   let deleteFooter = document.getElementById('lastFooter');
-//   deleteFooter.parentNode.removeChild(deleteFooter);
-//   footerTable();
-//   formElement.reset();
-
-// });
 
 headtable();
 bodyTable();
