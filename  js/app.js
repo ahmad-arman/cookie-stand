@@ -45,14 +45,24 @@ Salmon.prototype.getsales = function () {
 
 
 const seattle = new Salmon('Seattle', 23, 65, 6.3);
+seattle.getCustomer();
+seattle.getsales();
 
 const tokoy = new Salmon('Tokoy', 3, 24, 1.2);
+tokoy.getCustomer();
+tokoy.getsales();
 
 const dubai = new Salmon('Dubai', 11, 38, 3.7);
+dubai.getCustomer();
+dubai.getsales();
 
 const Paris = new Salmon('Paris', 20, 38, 3.7);
+Paris.getCustomer();
+Paris.getsales();
 
 const lima = new Salmon('Lima', 2, 16, 4.6);
+lima.getCustomer();
+lima.getsales();
 
 
 
@@ -162,40 +172,49 @@ formElement.addEventListener('submit', function (event) {
   console.log(event.target.countryName.value);
 
   const countryName = event.target.country_Name.value;
-  const minCustomer = event.target.min_Customer.value;
-  const maxCustomer = event.target.max_Customer.value;
-  const avgCookies = event.target.avg_Cookies.value;
+  const minCustomer = Number(event.target.min_Customer.value);
+  const maxCustomer = Number(event.target.max_Customer.value);
+  const avgCookies = Number(event.target.avg_Cookies.value);
+
+  // 1 == "1" true
+  // 1 === "1" flase
+  //you should create if statment to compare the max and min
+  // if the min greater than max then create alert to the user "the min shouldnt be greater than the max"
+  // inside the else if put creating object and the rest of the function.
+  if (minCustomer > maxCustomer) {
+    alert('The min shouldnt be greater than the max');
+  } else {
+
+    const country = new Salmon(countryName, minCustomer, maxCustomer, avgCookies);
 
 
+    const trNewElement = document.createElement('tr');
+    tableElement.appendChild(trNewElement);
 
+    const tdNewElement = document.createElement('td');
+    trNewElement.appendChild(tdNewElement);
+    tdNewElement.textContent = country.name;
+    country.total = 0;
 
-  const country = new Salmon(countryName, minCustomer, maxCustomer, avgCookies);
+    for (let i = 0; i < hour.length; i++) {
 
+      const tdElement = document.createElement('td');
+      trNewElement.appendChild(tdElement);
+      tdElement.textContent = country.cookiesSales[i];
+      country.total += country.cookiesSales[i];
 
-  const trNewElement = document.createElement('tr');
-  tableElement.appendChild(trNewElement);
+    }
+    const td1Element = document.createElement('td');
+    trNewElement.appendChild(td1Element);
+    td1Element.textContent = country.total;
 
-  const tdNewElement = document.createElement('td');
-  trNewElement.appendChild(tdNewElement);
-  tdNewElement.textContent = country.name;
-  country.total=0;
-
-  for (let i = 0; i < hour.length; i++) {
-
-    const tdElement = document.createElement('td');
-    trNewElement.appendChild(tdElement);
-    tdElement.textContent = country.cookiesSales[i];
-    country.total += country.cookiesSales[i];
-
+    let deleteFooter = document.getElementById('lastFooter');
+    deleteFooter.parentNode.removeChild(deleteFooter);
+    footerTable();
+    formElement.reset();
   }
-  const td1Element = document.createElement('td');
-  trNewElement.appendChild(td1Element);
-  td1Element.textContent = country.total;
 
-  let deleteFooter = document.getElementById('lastFooter');
-  deleteFooter.parentNode.removeChild(deleteFooter);
-  footerTable();
-  formElement.reset();
+
 
 });
 
