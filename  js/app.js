@@ -17,8 +17,8 @@ function Salmon(name, min, max, avg) {
   this.customer = [];
   this.cookiesSales = [];
   this.total = 0;
-  this.getCustomer();
-  this.getsales();
+  // this.getCustomer();
+  // this.getsales();
   this.totalPerHour = 0;
   this.totalperhourallcontury = 0;
   countries.push(this);
@@ -186,6 +186,8 @@ formElement.addEventListener('submit', function (event) {
   } else {
 
     const country = new Salmon(countryName, minCustomer, maxCustomer, avgCookies);
+    country.getCustomer();
+    country.getsales();
 
 
     const trNewElement = document.createElement('tr');
