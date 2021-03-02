@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&family=DotGothic16&family=Josefin+Slab:ital,wght@0,300;1,300&family=Raleway:ital,wght@0,500;1,100&display=swap');
+
+body{
+    background-color: blueviolet;
+    width: 960px;
+    margin: auto;
+}
+
+div {
+    background-color: black;
+    padding: 10px 10px ;
+    margin: auto;
+    width: 70%;
+    color: white;
+    border: 3px solid black;
+    margin: 20px auto;
+
+}
+div h1 {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+ 
+div span {
+    font-family: 'Raleway', sans-serif;
+    
+}
+.two {
+    width: 25%;
+    margin-bottom: 10px;
+    border-radius: 25%;
+    height: 200px;
+    margin: 0 12%;
+}
+.one {
+    width: 25%;
+    height: 150px;
+}  
+.three {
+    width: 100%;
+    margin: 30px 0;
+    border-radius: 40%;
+}
